@@ -4,8 +4,15 @@
  * date:        16/03/2021
  * last update: 23/06/2021
  * 
- * This code is a test for the first dimensioning of the Farming Bot.
+ * This code allows the robot to travel to specific positions (steps).
  * The USB-Serialcommunication between Pi and Uno is not implemented, yet.
+ * 
+ * New Changes since Version 1.2 (08.06.2021)
+ *    - Z and X Axis are implemented
+ *    - Added new library "Servo.h"
+ *    - Added new variables and constants (Pins) for the servo motors
+ *      used to control the gripper
+ *    - "Error Protocol" for the Serial Monitor implemented
  * 
  * Before use, please install the following Arduino libraries on your device:
  *    ArduinoThread   <Thread.h>
@@ -189,8 +196,8 @@ void setup() {
   Sright.attach(SERVO_RIGHT);
   Sgrab.attach(SERVO_GRAB);
 
-  //home_x();
-  //home_z();
+  home_x();
+  home_z();
   //home_gripper();
   
 }
@@ -204,7 +211,7 @@ void loop()
   
   while (boool == true)
   {
-    //movebot();  
+    movebot();  
 
     
 
