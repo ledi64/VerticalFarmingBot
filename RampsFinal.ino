@@ -1,11 +1,49 @@
 /*
  * RAMPS 1.4 Shield Arduino for Farming Bot
  * author:      Leon Diel
- * date:        16/03/2021
- * last update: 14/01/2022
+ * created:     03/16/2021
+ * last update: 02/10/2022
+ *
+ * New Changes since Version 1.2 (06/08/2021)
+ *    - Z- and X-Axis are implemented
+ *    - Added new library "Servo.h"
+ *    - Added new variables and constants (Pins) for the servo motors
+ *      used to control the gripper
+ *    - "Error Protocol" for the Serial Monitor implemented
+ *    
+ * New Changes since Version 2.0 (11/29/2021)
+ *    - Serial Communication implemented
+ *    - Updated Error Protocol
+ *    - Input Positions with Serial Monitor
+ *    - Removed thread- and servo- declarations
+ *    
+ * New Changes since Version 2.1 (12/19/2021)
+ *    - Implemented Y-Axis
+ *    - grab() Method implemented
+ *    - relocate() method implemented
+ *    - Updated moveto() method
  * 
- * This code allows the robot to travel to specific positions (steps).
- * The USB-Serialcommunication between Pi and Uno is not implemented, yet. 
+ * New Changes since Version 3.0 (02/09/2022)
+ *    - optimized for the serial communication between Pi and Arduino
+ *    - serial outputs commented out to prevent overloading the Pi's serial buffer
+ *
+ * Before use, please install the following Arduino libraries on your device:
+ *    [-]
+ * 
+ * Protocol for relocate()-function
+ *    connected to the Rasperry Pi
+ * 
+ *    moving example:
+ *      Pi sends "10T2"
+ *      
+ *      10 >> first position, which should be moved
+ *      
+ *	T >> only a Character to seperatre the positions
+ *
+ *	2 >> position, to which the plant should be relocated
+ *      
+ *      Translated:
+ *      -> Grab plant on position 10 and relocate it to position 2.
  */
 
 #include <string.h>
