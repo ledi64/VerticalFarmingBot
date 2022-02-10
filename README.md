@@ -1,5 +1,9 @@
 # VerticalFarmingBot
-This is the Code for the Vertical Farming Bot (Cartesian, College Project)
+This is the Code for the Vertical Farming Bot (Cartesian, Bachelor thesis), the Monitoring-Code (Arduino) for the Vertical Farming system and the GUI to control the bot and the parameters of the farm.
+
+The robot code, written in C/C++, is named "RampsFinal.ino" and needs to be uploaded on an Arduino Mega
+The monitoring code, written in C/C++ as well, for the sensors is named "Monitoring.ino" and needs to be uploaded on an Arduino Uno
+The GUI file is written in Python and is seperated into mutiple code-files. They can be opend on the Raspberry Pi. Before running the GUI, some libraries must first be installed. The documentation can be found in the file "Documentation.pdf" (coming soon).
 
 New Changes since Version 3.0 (02/09/2022)
 - optimized for serial communication between Pi and Arduino
