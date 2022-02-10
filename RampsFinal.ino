@@ -25,7 +25,7 @@
  * 
  * New Changes since Version 3.0 (02/09/2022)
  *    - optimized for the serial communication between Pi and Arduino
- *    - serial outputs commented out to prevent overloading the Pi's serial buffer
+ *    - serial outputs commented out to prevent overloading the Pi's serial recieve buffer
  *
  * Before use, please install the following Arduino libraries on your device:
  *    [-]
