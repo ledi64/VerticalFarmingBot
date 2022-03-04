@@ -1,49 +1,11 @@
 /*
  * RAMPS 1.4 Shield Arduino for Farming Bot
  * author:      Leon Diel
- * created:     03/16/2021
- * last update: 02/10/2022
- *
- * New Changes since Version 1.2 (06/08/2021)
- *    - Z- and X-Axis are implemented
- *    - Added new library "Servo.h"
- *    - Added new variables and constants (Pins) for the servo motors
- *      used to control the gripper
- *    - "Error Protocol" for the Serial Monitor implemented
- *    
- * New Changes since Version 2.0 (11/29/2021)
- *    - Serial Communication implemented
- *    - Updated Error Protocol
- *    - Input Positions with Serial Monitor
- *    - Removed thread- and servo- declarations
- *    
- * New Changes since Version 2.1 (12/19/2021)
- *    - Implemented Y-Axis
- *    - grab() Method implemented
- *    - relocate() method implemented
- *    - Updated moveto() method
+ * date:        16/03/2021
+ * last update: 03/02/2022
  * 
- * New Changes since Version 3.0 (02/09/2022)
- *    - optimized for the serial communication between Pi and Arduino
- *    - serial outputs commented out to prevent overloading the Pi's serial recieve buffer
- *
- * Before use, please install the following Arduino libraries on your device:
- *    [-]
- * 
- * Protocol for relocate()-function
- *    connected to the Rasperry Pi
- * 
- *    moving example:
- *      Pi sends "10T2"
- *      
- *      10 >> first position, which should be moved
- *      
- *	T >> only a Character to seperatre the positions
- *
- *	2 >> position, to which the plant should be relocated
- *      
- *      Translated:
- *      -> Grab plant on position 10 and relocate it to position 2.
+ * This code allows the robot to travel to specific positions (steps).
+ * The USB-Serialcommunication between Pi and Uno is not implemented, yet. 
  */
 
 #include <string.h>
@@ -52,7 +14,6 @@
 //=================
 // PIN DEFINITIONS
 //=================
-
 
 // Steppermotors
 #define X_STEP  54
@@ -145,30 +106,30 @@ unsigned int grab_z = 400;
 // Steps List for easier Communitation
 //=====================================
                                //  x     y     z        Schritte
-const long STEP_TO_POS[24][3] = { {75, 2075, 2780},     // 0 - Stockwerk 1, Pos 1
+const long STEP_TO_POS[24][3] = { {90, 2075, 2765},     // 0 - Stockwerk 1, Pos 1
                                   {75, 1180, 2715},     // 1 - Stockwerk 1, Pos 2
-                                  {1025, 2040, 2775},   // 2 - ...
+                                  {1030, 2040, 2750},   // 2 - ...
                                   {1050, 1185, 2675},   // 3
                                   {1970, 2060, 2710},   // 4
-                                  {1980, 1170, 2655},   // 5
+                                  {1960, 1170, 2655},   // 5
                                   {90, 2100, 5325},     // 6 - Stockwerk 2, Pos 1
                                   {90, 1200, 5275},     // 7 - Stockwerk 2, Pos 2
-                                  {1025, 2090, 5315},   // 8
+                                  {1035, 2090, 5290},   // 8
                                   {1050, 1220, 5250},   // 9
                                   {1990, 2080, 5300},   // 10
                                   {2000, 1200, 5215},   // 11
-                                  {90, 2410, 7025},     // 12
-                                  {90, 1910, 6990},     // 13
-                                  {90, 1435, 6950},     // 14
-                                  {90, 970, 6950},      // 15
-                                  {1075, 2405, 6995},   // 16
-                                  {1075, 1905, 6965},   // 17
-                                  {1075, 1430, 6925},   // 18
-                                  {1075, 965, 6915},    // 19
-                                  {2050, 2410, 7000},   // 20
-                                  {2050, 1915, 6960},   // 21
-                                  {2075, 1430, 6910},   // 22
-                                  {2050, 965, 6875}};   // 23
+                                  {105, 2420, 7025},     // 12 - Anzucht
+                                  {105, 1910, 7000},     // 13
+                                  {105, 1455, 6965},     // 14
+                                  {105, 962, 6955},      // 15
+                                  {1110, 2435, 7012},   // 16
+                                  {1110, 1905, 6970},   // 17
+                                  {1110, 1450, 6930},   // 18
+                                  {1110, 972, 6925},    // 19
+                                  {2070, 2425, 6980},   // 20
+                                  {2080, 1935, 6930},   // 21
+                                  {2075, 1435, 6900},   // 22
+                                  {2065, 950, 6875}};   // 23
 
 
 void setup() {
@@ -204,7 +165,7 @@ void setup() {
 
   delay(100);
   
-  //home_protection_y_undo();
+  home_protection_y_undo();
   
   home_y();
   home_x();
@@ -349,26 +310,17 @@ void relocate()
       break;
     }
   }
-  delay(250);
+  delay(100);
   home_y();
   home_x();
+  delay(100);
+  home_protection_y();
   Serial.println("Success");
   return;
 }
 
 void grab()
 {
-  /*
-   * Steps:
-   *  - x-axis um x Schritte nach rechts
-   *  - grab_x auf current_x_p addieren
-   *  - z-axis um z Schritte nach oben
-   *  - grab_z auf currentz_p addieren
-   *  - x-axis um x Schritte nach links
-   *  - grab_x von current_x_p subtrahieren
-   *  - home y
-   */
-
   // x-axis um x Schritte nach rechts
   digitalWrite(X_DIR, LOW);
     
@@ -446,17 +398,6 @@ void grab()
 
 void place()
 {
-  /*
-   * Steps:
-   *  - x-axis um x Schritte nach rechts
-   *  - grab_x auf current_x_p addieren
-   *  - z-axis um z Schritte nach unten
-   *  - grab_z von currentz_p subtrahieren
-   *  - x-axis um x Schritte nach links
-   *  - grab_x von current_x_p subtrahieren
-   *  - home y
-   */
-  
   // x-axis um x Schritte nach rechts
   digitalWrite(X_DIR, LOW);
     
@@ -930,33 +871,33 @@ void home_protection_y()
 {  
   digitalWrite(Z_DIR, HIGH);
   digitalWrite(Y_DIR, LOW);
-  Serial.println("Protection of the y axis...");
+  //Serial.println("Protection of the y axis...");
 
-  for (int i = 0; i < 200; i++)
+  for (int i = 0; i < 150; i++)
   {
     digitalWrite(Z_STEP, HIGH);
-    delayMicroseconds(500);
+    delayMicroseconds(600);
     
     digitalWrite(Z_STEP, LOW);
-    delayMicroseconds(500);
+    delayMicroseconds(600);
     
     digitalWrite(Y_STEP, HIGH);
-    delayMicroseconds(500);
+    delayMicroseconds(600);
     
     digitalWrite(Y_STEP, LOW);
-    delayMicroseconds(500);
+    delayMicroseconds(600);
   }
-  curr_position_z[0] = 200;
-  curr_position_z[1] = 200;
-  Serial.println("Z-height reached.");
+  curr_position_z[0] = 100;
+  curr_position_z[1] = 100;
+  //Serial.println("Z-height reached.");
 
   delay(100);
   
   // LOW >> Back, HIGH >> Forth
   digitalWrite(E_DIR, HIGH);
-  Serial.println("Protecting y-axis...");
+  //Serial.println("Protecting y-axis...");
   
-  for (int i = 0; i < 2500; i++)
+  for (int i = 0; i < 2250; i++)
   {
     digitalWrite(E_STEP, HIGH);
     delayMicroseconds(700);
@@ -964,9 +905,38 @@ void home_protection_y()
     digitalWrite(E_STEP, LOW);
     delayMicroseconds(700);
   }
-  curr_position_y[0] = 2500;
-  curr_position_y[1] = 2500;
-  Serial.println("Y-axis protected.");
+  curr_position_y[0] = 2250;
+  curr_position_y[1] = 2250;
+  //Serial.println("Y-axis protected.");
+  delay(100);
+
+  // HOME Z
+  digitalWrite(Z_DIR, LOW);
+  digitalWrite(Y_DIR, HIGH);
+  //Serial.println("Homing Z...");
+
+  limit_min_z = digitalRead(END_MIN_Z);
+  while (limit_min_z == 1)
+  {
+    limit_min_z = digitalRead(END_MIN_Z);
+
+    digitalWrite(Z_STEP, HIGH);
+    delayMicroseconds(650);
+    
+    digitalWrite(Z_STEP, LOW);
+    delayMicroseconds(650);
+    
+    digitalWrite(Y_STEP, HIGH);
+    delayMicroseconds(650);
+    
+    digitalWrite(Y_STEP, LOW);
+    delayMicroseconds(650);
+  }
+  curr_position_z[0] = 0;
+  curr_position_z[1] = 0;
+  Serial.println("Z-Homed.");
+  //digitalWrite(Y_ENABLE,1);
+  //digitalWrite(Z_ENABLE,1);
   delay(100);
 }
 
