@@ -1,0 +1,99 @@
+\hypertarget{namespacebackend}{}\section{backend Namespace Reference}
+\label{namespacebackend}\index{backend@{backend}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classbackend_1_1Config}{Config}
+\item 
+class \hyperlink{classbackend_1_1Control__Parameters}{Control\+\_\+\+Parameters}
+\item 
+class \hyperlink{classbackend_1_1Control__Robot}{Control\+\_\+\+Robot}
+\item 
+class \hyperlink{classbackend_1_1Visualization}{Visualization}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacebackend_a66c011e3cef118db76db324acedd3e26}\label{namespacebackend_a66c011e3cef118db76db324acedd3e26}} 
+{\bfseries pwm} = Adafruit\+\_\+\+P\+C\+A9685.\+P\+C\+A9685()
+\item 
+\mbox{\Hypertarget{namespacebackend_ad83a23fdf1780f40ed9880fc5b65e3d8}\label{namespacebackend_ad83a23fdf1780f40ed9880fc5b65e3d8}} 
+{\bfseries state\+\_\+boxes} = array(\textquotesingle{}I\textquotesingle{}, \mbox{[}0, 0, 0, 0\mbox{]})
+\item 
+\mbox{\Hypertarget{namespacebackend_a85622f023f71ccd53933fb16ff593384}\label{namespacebackend_a85622f023f71ccd53933fb16ff593384}} 
+list {\bfseries O\+N\+\_\+\+O\+F\+F\+\_\+\+T\+I\+ME} = \mbox{[}0, 0, 0, 0, 0\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacebackend_ae88a511e93c32e70e51bb64c184bdc8b}\label{namespacebackend_ae88a511e93c32e70e51bb64c184bdc8b}} 
+list {\bfseries O\+N\+\_\+\+O\+F\+F\+\_\+\+T\+I\+M\+E\+\_\+S} = \mbox{[}\textquotesingle{}00\+:00\+:00\textquotesingle{}, \textquotesingle{}00\+:00\+:00\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacebackend_aba6c4b8918ec6d52f6da7889f25d6f85}\label{namespacebackend_aba6c4b8918ec6d52f6da7889f25d6f85}} 
+string {\bfseries off\+\_\+char} = \textquotesingle{}00\+:00\+:00\textquotesingle{}
+\item 
+list {\bfseries V\+I\+A\+L\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}
+\item 
+\mbox{\Hypertarget{namespacebackend_a629fc1a8b3be02b6fe948842e2a43665}\label{namespacebackend_a629fc1a8b3be02b6fe948842e2a43665}} 
+{\bfseries robot} = serial.\+Serial(\textquotesingle{}/dev/tty\+A\+C\+M0\textquotesingle{}, 9600)
+\item 
+\mbox{\Hypertarget{namespacebackend_ac3d83374d7942e08c5ba3a0262af64aa}\label{namespacebackend_ac3d83374d7942e08c5ba3a0262af64aa}} 
+{\bfseries data} = serial.\+Serial(\textquotesingle{}/dev/tty\+A\+C\+M1\textquotesingle{}, 115200, timeout=10)
+\item 
+\mbox{\Hypertarget{namespacebackend_afab395ab9b22ce9616dbfd085f7bfc50}\label{namespacebackend_afab395ab9b22ce9616dbfd085f7bfc50}} 
+{\bfseries f} = Figure(figsize=(8,4), dpi=90)
+\item 
+\mbox{\Hypertarget{namespacebackend_aa387c7eb8a92fb2cb4704b489227171b}\label{namespacebackend_aa387c7eb8a92fb2cb4704b489227171b}} 
+{\bfseries a} = f.\+add\+\_\+subplot(111)
+\item 
+\mbox{\Hypertarget{namespacebackend_a8bd942824820aa2713ad7bc52606faf9}\label{namespacebackend_a8bd942824820aa2713ad7bc52606faf9}} 
+{\bfseries lev} = Figure(figsize=(8,4), dpi=90)
+\item 
+\mbox{\Hypertarget{namespacebackend_ad6ab0ed3806b9fb0f5f4c46e96a629c2}\label{namespacebackend_ad6ab0ed3806b9fb0f5f4c46e96a629c2}} 
+{\bfseries lev\+\_\+sub} = lev.\+add\+\_\+subplot(111)
+\item 
+\mbox{\Hypertarget{namespacebackend_abfbfc7d11b7f91d3cabbe9654120a7fa}\label{namespacebackend_abfbfc7d11b7f91d3cabbe9654120a7fa}} 
+{\bfseries p\+H\+\_\+plot} = Figure(figsize=(8,4), dpi=90)
+\item 
+\mbox{\Hypertarget{namespacebackend_add81d9b732626db28b08d88f590b6fa1}\label{namespacebackend_add81d9b732626db28b08d88f590b6fa1}} 
+{\bfseries p\+H\+\_\+sub} = p\+H\+\_\+plot.\+add\+\_\+subplot(111)
+\item 
+\mbox{\Hypertarget{namespacebackend_a838ce55cf2d5b72ea50c5a4f98211931}\label{namespacebackend_a838ce55cf2d5b72ea50c5a4f98211931}} 
+{\bfseries ec\+\_\+plot} = Figure(figsize=(8,4), dpi=90)
+\item 
+\mbox{\Hypertarget{namespacebackend_a28c63029c75f495e357f9fc7fae0de85}\label{namespacebackend_a28c63029c75f495e357f9fc7fae0de85}} 
+{\bfseries ec\+\_\+sub} = ec\+\_\+plot.\+add\+\_\+subplot(111)
+\item 
+\mbox{\Hypertarget{namespacebackend_a9552000cebc21900bb1328c2e4fab281}\label{namespacebackend_a9552000cebc21900bb1328c2e4fab281}} 
+bool {\bfseries header} = False
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}module name: backend.py
+author:      Leon Diel
+last update: 2022/03/30
+
+info:
+    This module includes classes for controlling the robot, communicating with microcontrollers, visualizing live graphs, and controlling cultivation parameters.
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacebackend_ab4701f5d026986460a4d66d745d8c147_ab4701f5d026986460a4d66d745d8c147}\label{namespacebackend_ab4701f5d026986460a4d66d745d8c147_ab4701f5d026986460a4d66d745d8c147}} 
+\index{backend@{backend}!V\+I\+A\+L\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS@{V\+I\+A\+L\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}}
+\index{V\+I\+A\+L\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS@{V\+I\+A\+L\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}!backend@{backend}}
+\subsubsection{\texorpdfstring{V\+I\+A\+L\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}{VIAL\_PARAMETERS}}
+{\footnotesize\ttfamily list backend.\+V\+I\+A\+L\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+RS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  [0,  \textcolor{comment}{# index 0: temp air}
+2                    0,  \textcolor{comment}{# index 1: watertemp tank}
+3                    0,  \textcolor{comment}{# index 2: waterlevel tank}
+4                    0,  \textcolor{comment}{# index 3: waterlevel floor 1}
+5                    0,  \textcolor{comment}{# index 4: waterlevel floor 2}
+6                    0,  \textcolor{comment}{# index 5: humidity floor 1}
+7                    0,  \textcolor{comment}{# index 6: humidity floor 2}
+8                    0,  \textcolor{comment}{# index 7: humidity raisin}
+9                    0,  \textcolor{comment}{# index 8: pH tank}
+10                    0,  \textcolor{comment}{# index 9: ec tank}
+11                    0]
+\end{DoxyCode}

@@ -1,0 +1,166 @@
+\hypertarget{classbackend_1_1Control__Parameters}{}\section{backend.\+Control\+\_\+\+Parameters Class Reference}
+\label{classbackend_1_1Control__Parameters}\index{backend.\+Control\+\_\+\+Parameters@{backend.\+Control\+\_\+\+Parameters}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_ae878384dd1a339751250d6868daa7ed0_ae878384dd1a339751250d6868daa7ed0}{get\+\_\+state\+\_\+boxes} (eg, fst, snd, trd)
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_ac0ea3fa0e5b78766667cd717f7dd03e1_ac0ea3fa0e5b78766667cd717f7dd03e1}{write\+\_\+time\+\_\+list} (on\+\_\+h, on\+\_\+m, off\+\_\+h, off\+\_\+m, value)
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_ae5c14a3e6d3cb8ab572afa7d732abe93_ae5c14a3e6d3cb8ab572afa7d732abe93}{change\+\_\+val\+\_\+lights} (value)
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_acaf4c2a8133bddbd5cd7a8e557f322ee_acaf4c2a8133bddbd5cd7a8e557f322ee}{change\+\_\+val\+\_\+pump} (value)
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_afd7d566a865d6ce63c6b14982409eda8_afd7d566a865d6ce63c6b14982409eda8}{change\+\_\+val\+\_\+nutrients} (value)
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_a73190d45c0f933d9eb703545125d8d43_a73190d45c0f933d9eb703545125d8d43}{reset\+\_\+pwm\+\_\+channels} ()
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_a1cb2bf210e04842eb8530306d10f0120_a1cb2bf210e04842eb8530306d10f0120}{get\+\_\+current\+\_\+time} ()
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_a7ea529f7257a3e272b93324296dd5844_a7ea529f7257a3e272b93324296dd5844}{check\+\_\+time} ()
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_a41031342b9072faa0e6b236e9e106694_a41031342b9072faa0e6b236e9e106694}{start\+\_\+circulation} (pin, val)
+\item 
+def \hyperlink{classbackend_1_1Control__Parameters_a0ebe83ac5e2dea477f1971ab9e66cb23_a0ebe83ac5e2dea477f1971ab9e66cb23}{stop\+\_\+circulation} (pin)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}class Control_Parameters contains functions for editing cultivation parameters
+    - get_state_boxes
+    - write_time_list
+    - change_val_lights
+    - change_val_pump
+    - change_val_nutrients
+    - reset_pwm_channels
+    - get_current_time
+    - check_time
+    - start_circulation
+    - stop_circulation
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbackend_1_1Control__Parameters_ae5c14a3e6d3cb8ab572afa7d732abe93_ae5c14a3e6d3cb8ab572afa7d732abe93}\label{classbackend_1_1Control__Parameters_ae5c14a3e6d3cb8ab572afa7d732abe93_ae5c14a3e6d3cb8ab572afa7d732abe93}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!change\+\_\+val\+\_\+lights@{change\+\_\+val\+\_\+lights}}
+\index{change\+\_\+val\+\_\+lights@{change\+\_\+val\+\_\+lights}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{change\+\_\+val\+\_\+lights()}{change\_val\_lights()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+change\+\_\+val\+\_\+lights (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}change_val_lights(value)
+    - changes the pwm value for the lights depending on the state of the checkboxes
+transfer parameters:
+    value: int, pwm value between 0 and 4095
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_afd7d566a865d6ce63c6b14982409eda8_afd7d566a865d6ce63c6b14982409eda8}\label{classbackend_1_1Control__Parameters_afd7d566a865d6ce63c6b14982409eda8_afd7d566a865d6ce63c6b14982409eda8}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!change\+\_\+val\+\_\+nutrients@{change\+\_\+val\+\_\+nutrients}}
+\index{change\+\_\+val\+\_\+nutrients@{change\+\_\+val\+\_\+nutrients}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{change\+\_\+val\+\_\+nutrients()}{change\_val\_nutrients()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+change\+\_\+val\+\_\+nutrients (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}change_val_nutrients(value)
+    - changes the pwm value of the nutrients pump
+transfer parameters:
+    value: int, pwm value between 0 and 4095
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_acaf4c2a8133bddbd5cd7a8e557f322ee_acaf4c2a8133bddbd5cd7a8e557f322ee}\label{classbackend_1_1Control__Parameters_acaf4c2a8133bddbd5cd7a8e557f322ee_acaf4c2a8133bddbd5cd7a8e557f322ee}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!change\+\_\+val\+\_\+pump@{change\+\_\+val\+\_\+pump}}
+\index{change\+\_\+val\+\_\+pump@{change\+\_\+val\+\_\+pump}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{change\+\_\+val\+\_\+pump()}{change\_val\_pump()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+change\+\_\+val\+\_\+pump (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}change_val_pump(value)
+    - changes the pwm value of the water-pump
+transfer parameters:
+    value: int, pwm value between 0 and 4095
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_a7ea529f7257a3e272b93324296dd5844_a7ea529f7257a3e272b93324296dd5844}\label{classbackend_1_1Control__Parameters_a7ea529f7257a3e272b93324296dd5844_a7ea529f7257a3e272b93324296dd5844}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!check\+\_\+time@{check\+\_\+time}}
+\index{check\+\_\+time@{check\+\_\+time}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{check\+\_\+time()}{check\_time()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+check\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}check_time()
+    - checks the current time and compares it with the ON_OFF_TIME_S Array
+    - if the value matches with the on time, the lights will turned on
+    - if the value matches with the off time, the lights will turned off
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_a1cb2bf210e04842eb8530306d10f0120_a1cb2bf210e04842eb8530306d10f0120}\label{classbackend_1_1Control__Parameters_a1cb2bf210e04842eb8530306d10f0120_a1cb2bf210e04842eb8530306d10f0120}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!get\+\_\+current\+\_\+time@{get\+\_\+current\+\_\+time}}
+\index{get\+\_\+current\+\_\+time@{get\+\_\+current\+\_\+time}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+time()}{get\_current\_time()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+get\+\_\+current\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}get_current_time()
+    - requests the current system time and returns it as a string
+return parameter:
+    hour+':'+minute+':'+second : string, composite time
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_ae878384dd1a339751250d6868daa7ed0_ae878384dd1a339751250d6868daa7ed0}\label{classbackend_1_1Control__Parameters_ae878384dd1a339751250d6868daa7ed0_ae878384dd1a339751250d6868daa7ed0}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!get\+\_\+state\+\_\+boxes@{get\+\_\+state\+\_\+boxes}}
+\index{get\+\_\+state\+\_\+boxes@{get\+\_\+state\+\_\+boxes}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{get\+\_\+state\+\_\+boxes()}{get\_state\_boxes()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+get\+\_\+state\+\_\+boxes (\begin{DoxyParamCaption}\item[{}]{eg,  }\item[{}]{fst,  }\item[{}]{snd,  }\item[{}]{trd }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}get_state_boxes(eg, fst, snd, trd)
+    - updates the state_boxes array
+    - prints the array
+transfer parameters:
+    eg:  int, state for the ground floor box
+    fst: int, state for the first floor box
+    snd: int, state for the second floor box
+    trd: int, state for the third floor box
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_a73190d45c0f933d9eb703545125d8d43_a73190d45c0f933d9eb703545125d8d43}\label{classbackend_1_1Control__Parameters_a73190d45c0f933d9eb703545125d8d43_a73190d45c0f933d9eb703545125d8d43}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!reset\+\_\+pwm\+\_\+channels@{reset\+\_\+pwm\+\_\+channels}}
+\index{reset\+\_\+pwm\+\_\+channels@{reset\+\_\+pwm\+\_\+channels}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{reset\+\_\+pwm\+\_\+channels()}{reset\_pwm\_channels()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+reset\+\_\+pwm\+\_\+channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}reset_pwm_channels
+    - resets all pwm channels
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_a41031342b9072faa0e6b236e9e106694_a41031342b9072faa0e6b236e9e106694}\label{classbackend_1_1Control__Parameters_a41031342b9072faa0e6b236e9e106694_a41031342b9072faa0e6b236e9e106694}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!start\+\_\+circulation@{start\+\_\+circulation}}
+\index{start\+\_\+circulation@{start\+\_\+circulation}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{start\+\_\+circulation()}{start\_circulation()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+start\+\_\+circulation (\begin{DoxyParamCaption}\item[{}]{pin,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}start_circulation(pin, val)
+    - starts a circulation fan independend from the time
+transfer parameters:
+    pin: int, input pin
+    val: int, pwm value between 0 and 4095
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_a0ebe83ac5e2dea477f1971ab9e66cb23_a0ebe83ac5e2dea477f1971ab9e66cb23}\label{classbackend_1_1Control__Parameters_a0ebe83ac5e2dea477f1971ab9e66cb23_a0ebe83ac5e2dea477f1971ab9e66cb23}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!stop\+\_\+circulation@{stop\+\_\+circulation}}
+\index{stop\+\_\+circulation@{stop\+\_\+circulation}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{stop\+\_\+circulation()}{stop\_circulation()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+stop\+\_\+circulation (\begin{DoxyParamCaption}\item[{}]{pin }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}stop_circulation(pin)
+    - stops a circulation fan independend from the time
+transfer parameters:
+    pin: int, input pin
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Parameters_ac0ea3fa0e5b78766667cd717f7dd03e1_ac0ea3fa0e5b78766667cd717f7dd03e1}\label{classbackend_1_1Control__Parameters_ac0ea3fa0e5b78766667cd717f7dd03e1_ac0ea3fa0e5b78766667cd717f7dd03e1}} 
+\index{backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}!write\+\_\+time\+\_\+list@{write\+\_\+time\+\_\+list}}
+\index{write\+\_\+time\+\_\+list@{write\+\_\+time\+\_\+list}!backend\+::\+Control\+\_\+\+Parameters@{backend\+::\+Control\+\_\+\+Parameters}}
+\subsubsection{\texorpdfstring{write\+\_\+time\+\_\+list()}{write\_time\_list()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Parameters.\+write\+\_\+time\+\_\+list (\begin{DoxyParamCaption}\item[{}]{on\+\_\+h,  }\item[{}]{on\+\_\+m,  }\item[{}]{off\+\_\+h,  }\item[{}]{off\+\_\+m,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}write_time_list(on_h, on_m, off_h, off_m, value)
+    - updates the ON_OFF_TIME and ON_OFF_TIME_S arrays with the parameters chosen from the option menues
+    - print the ON_OFF_TIME_S array
+transfer parameters:
+    on_h:   int, on time hour
+    on_m:   int, on time minute
+    off_h:  int, off time hour
+    off_m:  int, off time minute
+    value:  int, pwm value between 0 and 4095
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,59 @@
+\hypertarget{classbackend_1_1Control__Robot}{}\section{backend.\+Control\+\_\+\+Robot Class Reference}
+\label{classbackend_1_1Control__Robot}\index{backend.\+Control\+\_\+\+Robot@{backend.\+Control\+\_\+\+Robot}}
+
+
+Inheritance diagram for backend.\+Control\+\_\+\+Robot\+:
+% FIG 0
+
+
+Collaboration diagram for backend.\+Control\+\_\+\+Robot\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classbackend_1_1Control__Robot_a2963285d136120e08cbca12fff41c3e4_a2963285d136120e08cbca12fff41c3e4}{read\+\_\+serial} ()
+\item 
+def \hyperlink{classbackend_1_1Control__Robot_a7ea7aa2bb9ce9a16bf6f4ccb42dca12d_a7ea7aa2bb9ce9a16bf6f4ccb42dca12d}{relocate} (old, new)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}class Control_Robot(Config) contains the functions to interact with the robot via serial
+    - read_serial
+    - relocate
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbackend_1_1Control__Robot_a2963285d136120e08cbca12fff41c3e4_a2963285d136120e08cbca12fff41c3e4}\label{classbackend_1_1Control__Robot_a2963285d136120e08cbca12fff41c3e4_a2963285d136120e08cbca12fff41c3e4}} 
+\index{backend\+::\+Control\+\_\+\+Robot@{backend\+::\+Control\+\_\+\+Robot}!read\+\_\+serial@{read\+\_\+serial}}
+\index{read\+\_\+serial@{read\+\_\+serial}!backend\+::\+Control\+\_\+\+Robot@{backend\+::\+Control\+\_\+\+Robot}}
+\subsubsection{\texorpdfstring{read\+\_\+serial()}{read\_serial()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Robot.\+read\+\_\+serial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}read_serial()
+    - reads the serial buffer
+    - prints the delivered messages
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classbackend_1_1Control__Robot_a7ea7aa2bb9ce9a16bf6f4ccb42dca12d_a7ea7aa2bb9ce9a16bf6f4ccb42dca12d}\label{classbackend_1_1Control__Robot_a7ea7aa2bb9ce9a16bf6f4ccb42dca12d_a7ea7aa2bb9ce9a16bf6f4ccb42dca12d}} 
+\index{backend\+::\+Control\+\_\+\+Robot@{backend\+::\+Control\+\_\+\+Robot}!relocate@{relocate}}
+\index{relocate@{relocate}!backend\+::\+Control\+\_\+\+Robot@{backend\+::\+Control\+\_\+\+Robot}}
+\subsubsection{\texorpdfstring{relocate()}{relocate()}}
+{\footnotesize\ttfamily def backend.\+Control\+\_\+\+Robot.\+relocate (\begin{DoxyParamCaption}\item[{}]{old,  }\item[{}]{new }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}relocate(old, new)
+    - checks whether a relocation is possible with the transferring positions. 
+- if yes:
+    - sends the relocation command with initial and target positions to the robot
+    - calls the switch_position function for changing the booking system
+- if not:
+    - print out the error message including the detected problem
+transfer parameters:
+    old: int, initial position
+    new: new, target position
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend.\+py\end{DoxyCompactItemize}
