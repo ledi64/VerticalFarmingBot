@@ -1,0 +1,38 @@
+/* New Changes since Version 1.2 (08.06.2021)
+ *    - Z- and X-Axis are implemented
+ *    - Added new library "Servo.h"
+ *    - Added new variables and constants (Pins) for the servo motors
+ *      used to control the gripper
+ *    - "Error Protocol" for the Serial Monitor implemented
+ *    
+ * New Changes since Version 2.0 (29.11.2021)
+ *    - Serial Communication implemented
+ *    - Updated Error Protocol
+ *    - Input Positions with Serial Monitor
+ *    - Removed thread- and servo- declarations
+ *    
+ * New Changes since Version 2.1 (19.12.2021)
+ *    - Implemented Y-Axis
+ *    - grab() Method implemented
+ *    - relocate() method implemented
+ *    - Updated moveto() method
+ * 
+ * Before use, please install the following Arduino libraries on your device:
+ *    [-]
+ * 
+ * Protocol for relocate()-function
+ *    connected to the Rasperry Pi
+ * 
+ *    moving example:
+ *      Pi sends "10T2"
+ *      
+ *      10 >> first position, which should be moved
+ *      
+ *	T >> only a Character to seperatre the positions
+ *
+ *	2 >> position, to which the plant should be relocated
+ *      
+ *      Translated:
+ *      -> Grab plant on position 10 and relocate it to position 2.
+ *
+ */
